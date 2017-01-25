@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+venv
+.DC_Store
+db.sqlite3
