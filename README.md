@@ -42,3 +42,9 @@ in fetcher.tasks, a cron function is registered to run every minute:
         ...
 
 - A URL starts a background task that pauses for 5 seconds and then downloads the file.
+
+
+Some helpful URLs:
+
+- http://michal.karzynski.pl/blog/2014/05/18/setting-up-an-asynchronous-task-queue-for-django-using-celery-redis/
+- https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
