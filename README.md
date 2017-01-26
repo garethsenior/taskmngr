@@ -23,6 +23,9 @@ And run the Celeery worker:
 
     celery -A 'taskmngr' worker -l info
 
+And, for the cron scheduled stuff you'll need to run the Celery beat process:
+
+    celery -A 'taskmngr' beat
 
 Two things happen:
 

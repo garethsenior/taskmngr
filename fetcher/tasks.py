@@ -8,11 +8,7 @@ from .utils import get_chart_data
 logger = get_task_logger(__name__)
 
 
-@periodic_task(
-    run_every=(crontab(minute='*/1')),
-    name="task_get_chart_data",
-    ignore_result=True
-)
+@task
 def task_get_chart_data():
     """
     Saves latest image from Flickr

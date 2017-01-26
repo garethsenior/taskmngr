@@ -122,9 +122,19 @@ STATIC_URL = '/static/'
 
 
 # CELERY SETTINGS
+from celery.schedules import crontab
+
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Europe/London'
+
+CELERYBEAT_SCHEDULE = {
+
+    'periodic-get-chart-data': {
+        'task': 'fetcher.tasks.task_get_chart_data',
+        'schedule': crontab(minute='*/1'),
+    },
+}
